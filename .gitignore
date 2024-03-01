@@ -1,1 +1,4 @@
 .idea/
+__pycache__/
+authors.json
+quotes.json

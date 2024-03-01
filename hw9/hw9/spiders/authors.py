@@ -18,7 +18,7 @@ class AuthorsSpider(scrapy.Spider):
 
     def parse_author(self, response):
         yield {
-            'fullname': response.css('h3.author-title::text').get().strip(),
+            'fullname': response.css('h3.author-title::text').get().strip().replace('-', ' '),
             'born_date': response.css('span.author-born-date::text').get().strip(),
             'born_location': response.css('span.author-born-location::text').get().strip(),
             'description': response.css('div.author-description::text').get().strip(),
